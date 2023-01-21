@@ -1,6 +1,9 @@
-package com.example.translator.translator;
+package com.example.translator.translator.configuration;
 
-import org.springframework.boot.CommandLineRunner;
+import com.example.translator.translator.TranslatorInterface;
+import com.example.translator.translator.TranslatorRepository;
+import com.example.translator.translator.translatorServices.TranslatorService;
+import com.example.translator.translator.translatorServices.FrenchTranslatorService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 

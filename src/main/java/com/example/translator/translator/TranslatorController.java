@@ -1,5 +1,6 @@
 package com.example.translator.translator;
 
+import com.example.translator.translator.translatorServices.TranslatorService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

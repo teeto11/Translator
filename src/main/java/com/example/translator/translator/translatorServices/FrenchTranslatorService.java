@@ -1,5 +1,7 @@
-package com.example.translator.translator;
+package com.example.translator.translator.translatorServices;
 
+import com.example.translator.translator.TranslatorInterface;
+import com.example.translator.translator.TranslatorRepository;
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
