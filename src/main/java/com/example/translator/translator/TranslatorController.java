@@ -2,10 +2,7 @@ package com.example.translator.translator;
 
 import com.example.translator.translator.translatorServices.TranslatorService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
 
@@ -17,14 +14,14 @@ public class TranslatorController {
     private final TranslatorService translatorService;
 
     @GetMapping("/home")
-    public String home() {
-        return "Hello World!";
+    public String home(@RequestParam(required = false,name = "name") String name) {
+        return  name != null ? "Hello World!"+name : "Hello World!" ;
     }
 
     @GetMapping(path = "/translate/{word}/{language}")
     Optional<String> getWordAndLanguage(@PathVariable("word") String word, @PathVariable("language") String language) {
         System.out.println("word: " + word + " language: " + language);
-        return translatorService.getTranslation(word, language);
+        return translatorService.getTranslation(word.toLowerCase(), language.toLowerCase());
     }
 
 }
